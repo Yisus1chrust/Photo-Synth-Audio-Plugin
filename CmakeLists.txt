@@ -15,23 +15,23 @@ juce_add_plugin(photo_synth_plugin
 
 target_sources(photo_synth_plugin
     PRIVATE
-        Source/PluginProcessor.cpp
-        Source/PluginProcessor.h
-        Source/PluginEditor.cpp
-        Source/PluginEditor.h
-        Source/SynthEngine.cpp
-        Source/SynthEngine.h
-        Source/SynthVoice.cpp
-        Source/SynthVoice.h
-        Source/ImageAnalyzer.cpp
-        Source/ImageAnalyzer.h
-        Source/MorphEngine.cpp
-        Source/MorphEngine.h
-        Source/PhysicalModeling.cpp
-        Source/PhysicalModeling.h
-        Source/EffectsChain.cpp
-        Source/EffectsChain.h
-        Source/CommonTypes.h)
+        PluginProcessor.cpp
+        PluginProcessor.h
+        PluginEditor.cpp
+        PluginEditor.h
+        SynthEngine.cpp
+        SynthEngine.h
+        SynthVoice.cpp
+        SynthVoice.h
+        ImageAnalyzer.cpp
+        ImageAnalyzer.h
+        MorphEngine.cpp
+        MorphEngine.h
+        PhysicalModeling.cpp
+        PhysicalModeling.h
+        EffectsChain.cpp
+        EffectsChain.h
+        CommonTypes.h)
 
 target_link_libraries(photo_synth_plugin
     PRIVATE
