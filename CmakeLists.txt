@@ -1,0 +1,43 @@
+cmake_minimum_required(VERSION 3.22)
+project(photo_synth_plugin VERSION 1.0.0)
+
+set(JUCE_PATH "./JUCE")
+add_subdirectory(${JUCE_PATH} JUCE)
+
+juce_add_plugin(photo_synth_plugin
+    COMPANY_NAME "PhotoSynth"
+    IS_SYNTH TRUE
+    NEEDS_MIDI TRUE
+    PLUGIN_MANUFACTURER_CODE Phsy
+    PLUGIN_CODE Psyn
+    FORMATS VST3 AU
+    PRODUCT_NAME "Photo Synth")
+
+target_sources(photo_synth_plugin
+    PRIVATE
+        Source/PluginProcessor.cpp
+        Source/PluginProcessor.h
+        Source/PluginEditor.cpp
+        Source/PluginEditor.h
+        Source/SynthEngine.cpp
+        Source/SynthEngine.h
+        Source/SynthVoice.cpp
+        Source/SynthVoice.h
+        Source/ImageAnalyzer.cpp
+        Source/ImageAnalyzer.h
+        Source/MorphEngine.cpp
+        Source/MorphEngine.h
+        Source/PhysicalModeling.cpp
+        Source/PhysicalModeling.h
+        Source/EffectsChain.cpp
+        Source/EffectsChain.h
+        Source/CommonTypes.h)
+
+target_link_libraries(photo_synth_plugin
+    PRIVATE
+        juce::juce_audio_utils
+        juce::juce_dsp
+    PUBLIC
+        juce::juce_recommended_config_flags
+        juce::juce_recommended_lto_flags
+        juce::juce_recommended_warning_flags)
