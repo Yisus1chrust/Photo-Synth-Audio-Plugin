@@ -13,6 +13,8 @@ juce_add_plugin(photo_synth_plugin
     FORMATS VST3 AU
     PRODUCT_NAME "Photo Synth")
 
+juce_generate_juce_header(photo_synth_plugin)
+
 target_sources(photo_synth_plugin
     PRIVATE
         PluginProcessor.cpp
@@ -32,8 +34,6 @@ target_sources(photo_synth_plugin
         EffectsChain.cpp
         EffectsChain.h
         CommonTypes.h)
-
-target_include_directories(photo_synth_plugin PRIVATE .)
 
 target_link_libraries(photo_synth_plugin
     PRIVATE
