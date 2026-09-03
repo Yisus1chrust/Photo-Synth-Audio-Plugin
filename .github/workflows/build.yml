@@ -4,9 +4,9 @@ on: [push]
 
 jobs:
   build:
-      runs-on: macos-latest
+    runs-on: macos-latest
       
-      steps:
+    steps:
       - uses: actions/checkout@v4
       
       - name: Get JUCE Framework
@@ -16,7 +16,7 @@ jobs:
           path: JUCE
           
       - name: Configure CMake
-        run: cmake -B build -G "Xcode" -DJUCE_PATH=./JUCE
+        run: cmake -B build -DCMAKE_BUILD_TYPE=Release -DJUCE_PATH=./JUCE
         
       - name: Build VST3 and AU
         run: cmake --build build --config Release
