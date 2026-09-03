@@ -10,7 +10,7 @@ juce_add_plugin(photo_synth_plugin
     NEEDS_MIDI TRUE
     PLUGIN_MANUFACTURER_CODE Phsy
     PLUGIN_CODE Psyn
-    FORMATS VST3 AU
+    FORMATS AU
     PRODUCT_NAME "Photo Synth")
 
 juce_generate_juce_header(photo_synth_plugin)
